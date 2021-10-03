@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- https://api.openweathermap.org/data/2.5/weather?q=coimbatore&units=metric&apikey=01f39e8610742a31cde082031bce2be8 -->
+</head>
+
+<body>
+    <div id="myData">
+        <h1 class="wr">Weather Report</h1>
+        <table id="myTable">
+            <tr>
+                <td>
+                    <input name="city" id="candidate" placeholder="Enter City">
+                </td>
+                <td><button onclick="start()" id="myBtn"><i class="fa fa-search"></i></button></td>
+            </tr>
+            
+        </table>
+    </div>
+    <script>
+        function start() {
+            var mainContainer = document.getElementById("myTable");
+            var candidate = document.getElementById("candidate");
+            var city = candidate.value;
+            link = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&apikey=01f39e8610742a31cde082031bce2be8";
+            var request = new XMLHttpRequest();
+            request.open('GET', link, true);
+            request.onload = function() {
+                var obj = JSON.parse(this.response);
+                if (request.status >= 200 && request.status < 400) {
+                    var temp = obj;
+                    appendData(temp);
+                } else {
+                    var myobj = document.getElementById("newdiv");
+                    if (myobj != null) {
+                        myobj.remove();
+                    }
+
+                    var div = document.createElement("div");
+                    div.id = "newdiv";
+                    div.innerHTML = "<span>The city doesn't exist! <br> Kindly check</span>";
+                    mainContainer.appendChild(div);
+                }
+            }
+            request.send();
+        }
+
+
+        function appendData(data) {
+
+            var mainContainer = document.getElementById("myTable");
+            var myobj = document.getElementById("newdiv");
+            if (myobj != null) {
+                myobj.remove();
+            }
+
+            var div = document.createElement("div");
+            div.id = "newdiv";
+            div.innerHTML ='<br>'+"Weather in "+data.name+ '<br><br>' + 'Temperature : ' + "<span>" + data.main.temp + "</span>" + '<br>' + 'Humidity:' + "<span>" + data.main.humidity + "</span>" + '<br>' + 'Feels like:' + "<span>" + data.main.feels_like + "</span>" + '<br>' + 'Pressure:' + "<span>" + data.main.pressure + "</span>" + '<br>' + 'Visibility:' + "<span>" + data.visibility + "</span>" + '<br>' + 'Clouds:' + "<span>" + data.clouds.all + "</span>";
+            mainContainer.appendChild(div);
+
+        }
+
+        var input = document.getElementById("candidate");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("myBtn").click();
+            }
+        });
+    </script>
+</body>
+
+</html>

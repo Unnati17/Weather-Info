@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 5px 10px 8px #888888
+}
+
+body {
+    background-image: url("https://www.google.co.in/url?sa=i&url=https%3A%2F%2Fskydayproject.com%2F&psig=AOvVaw0zou-wDMfxlCuaiOoDdyyE&ust=1633343456220000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAiNmErvMCFQAAAAAdAAAAABAU");
+}
+
+h1 {
+    padding-top: 25px;
+}
+
+.wr {
+    margin-bottom: 20px;
+    padding-top: 0px;
+    padding-left: 60px;
+}
+
+.container {
+    background-color: #000000d0;
+    width: 100%;
+    height: 100px;
+}
+
+.fa {
+    background-color: #000000d0;
+    border: none;
+    border: none;
+    outline: none;
+}
+
+.fa-search {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    padding-top: 5px;
+}
+
+button {
+    margin-left: -40px;
+    border-radius: 50%;
+}
+
+#myData {
+    background: #000000d0;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 100px;
+    margin-left: 38%;
+    color: white;
+    padding-left: 30px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
+}
+
+td {
+    font-size: 20px;
+    padding-right: 60px;
+}
+
+input {
+    font-size: 14px;
+    margin: 6px;
+    border-color: black;
+    padding: 5px;
+}
+
+#candidate {
+    border: none;
+    outline: none;
+    align-items: center;
+    border-radius: 20px;
+    background: #7c7c7c2b;
+    color: white;
+    font-size: small;
+    margin-left: -10px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 300px;
+}
+
+select option {
+    margin: 6px;
+}
+
+table>div {
+    font-size: 20px;
+}
+
+table div span {
+    color: white;
+    float: right;
+    font-weight: bold;
+}

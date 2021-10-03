@@ -4,12 +4,19 @@
     margin: 0px;
 }
 
-header {
+.header {
+    margin-left: 650px;
+    display: flex;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
     text-transform: uppercase;
     text-align: center;
-    box-shadow: 5px 10px 8px #888888
+}
+
+img{
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 60px;
+    height: 60px;
 }
 
 body {
@@ -49,7 +56,12 @@ h1 {
 
 button {
     margin-left: -40px;
-    border-radius: 50%;
+    border-radius: 50%; 
+    transition: 0.2s;
+}
+
+button:hover{
+    background: #7c7c7c6b;
 }
 
 #myData {
